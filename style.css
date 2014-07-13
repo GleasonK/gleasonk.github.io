@@ -1,0 +1,121 @@
+
+fake{
+ background: -webkit-linear-gradient(315deg, #406044, #591414);
+}
+
+p{
+	font-size: 25px;
+	font-family: 'Exo 2', sans-serif;
+}
+
+.dark-theme p{
+	color: rgba(54,38,22,0.82);
+}
+
+.light-theme p{
+	color: rgba(255,255,255,0.95);
+}
+
+.page-title {
+	color: rgba(54,38,22,0.82);
+	font-size: 35px;
+	font-family: 'Exo 2', sans-serif;
+}
+
+hr.styled {
+    border: 0;
+    height: 1px;
+    margin: 30px 25px;
+}
+
+.dark-theme  hr.styled {
+	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+}
+
+.light-theme hr.styled {
+    border: 0;
+    height: 1px;
+    margin: 30px 25px;
+    background-image: -webkit-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+    background-image:      -o-linear-gradient(left, rgba(255,255,255,0), rgba(255,255,255,0.75), rgba(255,255,255,0)); 
+}
+
+h2{
+	color: rgba(54,38,22,0.82);
+	font-size: 23px;
+	font-family: 'Exo 2', sans-serif;
+}
+
+/* Page Elements */
+
+/* Footer */
+
+/* Footer */
+#footer {
+	color: white;
+}
+
+#footer .box-content{
+	color: white;
+}
+
+#scrollTopButton {
+
+}
+
+#toTop {
+	text-decoration: none;
+	color: white;
+	font-size: 32px;
+	opacity: 0.6;
+}
+
+/* Home */
+
+#about-me {
+	background: rgba(255,255,255,0.75); 
+}
+
+#notable-works {
+	background: rgba(255,255,255,0.75);
+}
+
+#notable-bar li{
+	background: #282861;
+	background: -webkit-linear-gradient(#5b84a2 0%, #0d083c 100%);
+	background:    -moz-linear-gradient(#5b84a2 0%, #0d083c 100%);
+	background:     -ms-linear-gradient(#5b84a2 0%, #0d083c 100%);
+	
+	color:white;
+}
+
+.pf-selected {
+	background: #1a3e71;
+	background: -webkit-linear-gradient(#0d083c 14.57%, #5b84a2 100%)!important;
+	background:    -moz-linear-gradient(#0d083c 14.57%, #5b84a2 100%)!important;
+	background:     -ms-linear-gradient(#0d083c 14.57%, #5b84a2 100%)!important;
+}
+
+
+/* About Me */
+
+#coding-experience {
+	list-style-type: square;
+	font-family: "Evo 2", sans-serif;
+	font-size: 18px;
+	text-align: justify;
+	padding: 25px;
+}
+
+#experience li{
+	margin-bottom: 10px;
+}
+
+#education {
+	text-align: justify;
+}
