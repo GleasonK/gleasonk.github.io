@@ -96,6 +96,9 @@ body{
 
 #bg-gradient{
 	background: -webkit-gradient(linear, left top, right bottom, from(rgb(239, 64, 54) ), to(rgb(255, 255, 0) ));
+	background: -moz-gradient(linear, left top, right bottom, from(rgb(239, 64, 54) ), to(rgb(255, 255, 0) ));
+	background: -ms-linear-gradient(315deg, rgb(239, 64, 54), rgb(255, 255, 0));
+	background: -o-gradient(linear, left top, right bottom, from(rgb(239, 64, 54) ), to(rgb(255, 255, 0) ));
 	z-index: -99;
 	position: fixed;
 	top:0;
@@ -165,13 +168,18 @@ body{
 
 #globe {
 	position: absolute;
-/* 	background: -webkit-linear-gradient(310deg, #ffffff 11.92%, rgba(255,255,255,0) 83.77%); */
 	background: -webkit-linear-gradient(310deg, #ffffff 11.92%, rgba(255,255,255,0) 78.48%);
+	background: -moz-linear-gradient(310deg, #ffffff 11.92%, rgba(255,255,255,0) 78.48%);
+	background: -ms-linear-gradient(310deg, #ffffff 11.92%, rgba(255,255,255,0) 78.48%);
+	background: -o-linear-gradient(310deg, #ffffff 11.92%, rgba(255,255,255,0) 78.48%);
 	border-radius: 50%;
 	width: 185px;
 	height: 180px;
 	top:257px;
 	-webkit-transform: rotate(0deg);
+	-moz-transform:rotate(0deg);
+	-ms-transform:rotate(0deg);
+	-o-transform:rotate(0deg);
 }
 
 #hemisphere {
@@ -182,6 +190,7 @@ body{
 	height:135%;
 	width: 80%;
 	max-width: 650px;
+	-ms-transform:rotate(0deg);
 	-webkit-transform: rotate(0deg);
 }
 
@@ -216,6 +225,9 @@ body{
 	margin-left: -80px;
 	background-image: url(Content/moon.png);
 	-webkit-transform: rotate(265deg);
+	-moz-transform:rotate(265deg);
+	-ms-transform:rotate(265deg);
+	-o-transform:rotate(265deg);
 }
 
 /* Page Elements */
