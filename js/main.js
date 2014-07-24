@@ -46,7 +46,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){ 
     var scroll_pos = 0;
-    var animation_begin_pos = 0; 
+    var animation_begin_pos = 0;
     var animation_end_pos = 2000;
     var beginning_color = new $.Color( 'rgb(239, 64, 54)' );    //Red
     var beginning_color_r =  new $.Color( 'rgb(255, 255, 0)' ); //Yellow

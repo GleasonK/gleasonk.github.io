@@ -7,7 +7,6 @@
 <meta name="description" content="Kevin A Gleason is a student web designer.">
 <meta name="keywords" content="Kevin, Gleason, Ohio, web, design, develop, BC, Boston, Cleveland">
 <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=no">
 
 <!-- CSS -->
 <link href="style.css" rel="stylesheet" type="text/css">
