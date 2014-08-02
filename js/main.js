@@ -18,7 +18,7 @@ else{
 
 	function show(){
 		var dtime = 2000
-		$('#loading, #blackground').delay(1000).fadeOut(1500,
+		$('#loading, #blackground').delay(750).fadeOut(1500,
 			function(){
 				$("#container").removeClass("gone").fadeIn(1000, 
 					function(){
