@@ -9,14 +9,13 @@ $(window).load(function(){
 
 function show(){
 	var dtime = 2000
-	$('#loading').delay(250).fadeOut(1000,
+	$('#loading, #blackground').fadeOut(1500,
 		function(){
-			$("#container").removeClass("gone").fadeIn(1500, 
+			$("#container").removeClass("gone").fadeIn(1000, 
 				function(){
 					var cb = $('#creators-box');
 					cb.css('bottom',-100);
-
-					$('#creators-box').stop().animate({ bottom:'+=100px' }, "slow")
+					$('#creators-box').stop().animate({ bottom:'+=100px' }, "fast")
 				});	
 	});
 }
