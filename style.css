@@ -17,13 +17,16 @@ body{
 	display: none;
 }
 
+.gone{
+	display: none!important;
+}
+
 .coming-soon, #creators{
 	font-family: sans-serif;
 	text-align: center;
 }
 
 .coming-soon{
-	display: none;
 	font-size: 48px;
 	margin: 100px auto 50px auto;
 	width: 50%;

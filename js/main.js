@@ -8,10 +8,9 @@ $(window).load(function(){
 });
 
 function show(){
-	$('#loading').delay(20000).hide()
-	$("#container").fadeIn("slow");	
+	var dtime = 2000
+	$('#loading').hide('fast').fadeOut(
+		function(){
+			$("#container").removeClass("gone").fadeIn(2500);	
+	});
 }
-
-$(document).ready(function() {
-   $(".coming-soon").fadeIn("slow");
-});
