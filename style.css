@@ -20,8 +20,9 @@ body{
 }
 
 .coming-soon{
+	display: none;
 	font-size: 48px;
-	margin: 100px auto;
+	margin: 100px auto 50px auto;
 	width: 50%;
 	min-width: 250px;
 	max-width: 550px;
@@ -34,14 +35,13 @@ body{
 #creators-box{
 	margin:0 auto;
 	color: white;
-	font-weight: bold;
 	background: black;
 	text-align: center;
 	position: fixed;
 	min-height: 100px;
 	bottom:0;
 	left:0;
-	right: 0;
+	right:0;
 }
 
 .creator{
@@ -50,8 +50,8 @@ body{
 	list-style: none;
 	display: inline-block;
 	margin:8px 15px;
-	font-size: 18px;
-	font-family: Arial
+	font-size: 16px;
+	font-family: "Quicksand", Arial;
 }
 	.creator a{
 		color: white;
@@ -81,11 +81,10 @@ h6 {
 	font-style: italic;
 }
 
-@media screen and (max-width: 725px){
+@media screen and (max-width: 725px), screen and (max-height: 550px){
     #creators-box{
 		margin:0 auto;
 		color: white;
-		font-weight: bold;
 		background: black;
 		text-align: center;
 		position: relative;
