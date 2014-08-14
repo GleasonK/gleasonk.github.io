@@ -26,7 +26,14 @@
 
 		<b>Bugs</b>
 		<ul>
-			<li>If you swipe two notifications away fast, app crashes. Lock while animated?</li>
+			<li>
+				<ul>
+					<li>If you swipe two notifications away fast, app crashes. Lock while animated?</li>
+					<li>Can't set a boolean to catch it, not sure when touch registers.</li>
+					<li>Can't toss in concurrent statement due to animation.</li>
+					<li>Consider removing in the mPendingDismiss section?</li>
+				</ul>
+			</li>
 			<li>Potentially while mPendingDismisses are not empty subtract 1 from the remove index</li>
 		</ul>
 	</div>
