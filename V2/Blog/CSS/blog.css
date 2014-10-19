@@ -1,0 +1,13 @@
+#functions{
+	list-style: none;
+}
+
+#code-box{
+	border: 3px inset white;
+	padding: 15px;
+	margin: 0 auto;
+	font-family: "Consolas";
+	text-align: left;
+	width: 75%;
+	background: rgba(255,255,255,0.75)
+}
