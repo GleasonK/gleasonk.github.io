@@ -3,12 +3,16 @@ fake{
  background: -webkit-linear-gradient(315deg, #406044, #591414);
 }
 
-p{
+p, .link-style{
 	font-size: 25px;
 	font-family: 'Exo 2', sans-serif;
 }
 
-.dark-theme p, .dark-theme ul, .dark-theme li{
+.link-style {
+	
+}
+
+.dark-theme p, .dark-theme ul, .dark-theme li, .link-style{
 	color: rgba(54,38,22,0.82);
 	
 }
