@@ -69,6 +69,12 @@ h2{
 	color: white;
 }
 
+.foot-links a{
+	text-decoration: none;
+	color: white;
+	opacity: 1;
+}
+
 #scrollTopButton {
 
 }
@@ -95,7 +101,6 @@ h2{
 	background: -webkit-linear-gradient(#5b84a2 0%, #0d083c 100%);
 	background:    -moz-linear-gradient(#5b84a2 0%, #0d083c 100%);
 	background:     -ms-linear-gradient(#5b84a2 0%, #0d083c 100%);
-	
 	color:white;
 }
 
