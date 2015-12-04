@@ -25,16 +25,17 @@ $(document).ready(function(){
 		$('#banner-wave.wave2').css('background-position',-25 + -waveSpeed/7 + 'px 0');
 		$('#banner-wave.wave3').css('background-position', -50  -waveSpeed/2.5 + 'px 0');
 
-		var dayDegree = 180 + -daylightSpeed;
-		var nightDegree = -50 + - nightlightSpeed;
-		if (bottomOfScreen < (-dayPos) && dayDegree < 440) {
-			transformAll($('#hemisphere.sun-orbit'), dayDegree);
-			transformAll($('#globe'), (60+dayDegree));
+		var dayDeg   = 180 + 0.5*(-bottomOfScreen - dayPos);
+		var nightDeg = 180 + (-bottomOfScreen - nightPos);
+		if (bottomOfScreen < (-dayPos) && dayDeg < 440) {
+			console.log("Day Pos: " + dayPos + " Bottom of Screen " + bottomOfScreen + " Day Degree " + dayDeg);
+			transformAll($('#hemisphere.sun-orbit'), dayDeg);
+			transformAll($('#globe'), (60+dayDeg));
 			// $('#hemisphere.sun-orbit').css('-webkit-transform', 'rotate(' + dayDegree + 'deg)');
 			// $('#globe').css('-webkit-transform', 'rotate(' + (60 + dayDegree) + 'deg)');
 		}
-		if (bottomOfScreen < (-nightPos) && nightDegree < 435){
-			transformAll($('#hemisphere.moon-orbit'), nightDegree);
+		if (bottomOfScreen < (-nightPos) && nightDeg < 435){
+			transformAll($('#hemisphere.moon-orbit'), nightDeg);
 			// $('#hemisphere.moon-orbit').css('-webkit-transform', 'rotate(' + (nightDegree) + 'deg)');
 		}
 	})
@@ -93,75 +94,5 @@ $(document).ready(function(){
     },
     function() {
       $(this).stop().animate({ opacity: 0.5 }); 
-    });
-});
-
-////////////////////////
-//Noteable Works Slider
-////////////////////////
-
-$(document).ready(function(){
-	$('#All-button').click(function(){
-		$('.selected').removeClass('pf-selected');
-		$(this).addClass('pf-selected');
-		$('.js, .ja, .ht, .ot').hide();
-		$('.js, .ja, .ht, .ot').show('clip');
-	});
-	$('#JavaScript-button').click(function(){
-		$('.selected').removeClass('pf-selected');
-		$(this).addClass('pf-selected');
-		// $(".active-button").removeClass(".active-button");
-		// $('#JavaScript-button').addClass(".active-button");
-		$('.ja, .ht, .ot').hide('clip');
-		$('.js').delay(400).show('clip');
-	});
-	$('#HTML-button').click(function(){
-		$('.selected').removeClass('pf-selected');
-		$(this).addClass('pf-selected');
-		$('.ja, .ot, .js').hide('clip');
-		$('.ht').delay(400).show('clip');	
-		
-	});
-	$('#Java-button').click(function(){
-		$('.ht, .js, .ot ').hide('clip');
-		$('.ja').delay(400).show('clip');	
-	});
-	$('#Other-button').click(function(){
-		$('.ht, .js, .ja ').hide('clip');
-		$('.ot').delay(400).show('clip');	
-	});
-	$("#All-button, #JavaScript-button, #HTML-button, #Java-button, #Other-button").click(function(){
-		$('.pf-selected').removeClass('pf-selected');
-		$(this).addClass('pf-selected');
-	});
-});
-
-$(document).ready(function(){
-	$('#notable-content').sortable();
-	$('#notable-content li').hover(function(){
-	    $(this).find('img').stop().fadeTo('fast',0.1);
-	    $(this).find('span').stop().fadeTo('fast',1);
-		}, 
-	function(){
-	    $(this).find('img').stop().fadeTo('fast',1);
-	    $(this).find('span').stop().fadeTo('fast',0);
-	});
-});
-
-$(document).ready(function(){
-	var scoreH = 0;
-	var scoreA = 0;
-	$('#ball').draggable({ revert: "valid" });
-	$( "#hoop1" ).droppable({
-      	drop: function( event, ui ) {
-      		scoreH += 2;
-        	$("#home-score").find("p").html(scoreH);
-      }
-    });
-    $( "#hoop2" ).droppable({
-      	drop: function( event, ui ) {
-      		scoreA += 2;
-        	$("#away-score").find("p").html(scoreA);
-      }
     });
 });
