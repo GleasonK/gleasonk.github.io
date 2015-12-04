@@ -28,7 +28,6 @@ $(document).ready(function(){
 		var dayDeg   = 180 + 0.5*(-bottomOfScreen - dayPos);
 		var nightDeg = 180 + (-bottomOfScreen - nightPos);
 		if (bottomOfScreen < (-dayPos) && dayDeg < 440) {
-			console.log("Day Pos: " + dayPos + " Bottom of Screen " + bottomOfScreen + " Day Degree " + dayDeg);
 			transformAll($('#hemisphere.sun-orbit'), dayDeg);
 			transformAll($('#globe'), (60+dayDeg));
 			// $('#hemisphere.sun-orbit').css('-webkit-transform', 'rotate(' + dayDegree + 'deg)');
