@@ -95,3 +95,18 @@ $(document).ready(function(){
       $(this).stop().animate({ opacity: 0.5 }); 
     });
 });
+
+/////////////////////
+// Notable Works Fade
+/////////////////////
+
+$(document).ready(function(){
+	$('#notable-content li').hover(function(){
+	    $(this).find('img').stop().fadeTo('fast',0.1);
+	    $(this).find('span').stop().fadeTo('fast',1);
+		}, 
+	function(){
+	    $(this).find('img').stop().fadeTo('fast',1);
+	    $(this).find('span').stop().fadeTo('fast',0);
+	});
+});
