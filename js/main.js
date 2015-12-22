@@ -27,15 +27,20 @@ $(document).ready(function(){
 
 		var dayDeg   = 180 + 0.5*(-bottomOfScreen - dayPos);
 		var nightDeg = 180 + (-bottomOfScreen - nightPos);
-		if (bottomOfScreen < (-dayPos) && dayDeg < 440) {
-			transformAll($('#hemisphere.sun-orbit'), dayDeg);
-			transformAll($('#globe'), (60+dayDeg));
-			// $('#hemisphere.sun-orbit').css('-webkit-transform', 'rotate(' + dayDegree + 'deg)');
-			// $('#globe').css('-webkit-transform', 'rotate(' + (60 + dayDegree) + 'deg)');
+		var DAY_MAX = 440;
+		var NIGHT_MAX = 435;
+		if (bottomOfScreen < (-dayPos)) {
+			if (dayDeg < 440){
+				transformAll($('#hemisphere.sun-orbit'), dayDeg);
+				transformAll($('#globe'), (60+dayDeg));
+			} else {
+				transformAll($('#hemisphere.sun-orbit'), DAY_MAX);
+				transformAll($('#globe'), (60+DAY_MAX));
+			}
 		}
-		if (bottomOfScreen < (-nightPos) && nightDeg < 435){
-			transformAll($('#hemisphere.moon-orbit'), nightDeg);
-			// $('#hemisphere.moon-orbit').css('-webkit-transform', 'rotate(' + (nightDegree) + 'deg)');
+		if (bottomOfScreen < (-nightPos)){
+			if (nightDeg < 435) transformAll($('#hemisphere.moon-orbit'), nightDeg);
+			else transformAll($('#hemisphere.moon-orbit'), NIGHT_MAX);
 		}
 	})
 });

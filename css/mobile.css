@@ -4,5 +4,18 @@
 
 .box-content {
 	width:80%;
-	text-align: left;
+}
+
+#moon {
+	margin-left: -240px;
+}
+
+#notable-content {
+	width: 90%;
+}
+
+#notable-content li{
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
 }
