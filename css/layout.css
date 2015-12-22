@@ -365,7 +365,7 @@ body{
 	width: 100%;
 }
 
-#footer .box-content, #scrollTopButton { 
+#footer .box-content { 
 	margin-top: 25px;
 	text-align: center;
 }
@@ -380,6 +380,8 @@ body{
 	top:25px;
 	left:38%;
 	margin: 0 auto;
+	display:block;
+	text-align:center
 }
 
 
