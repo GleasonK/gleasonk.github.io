@@ -55,10 +55,10 @@ $(document).ready(function(){
     var scroll_pos = 0;
     var animation_begin_pos = 0; 
     var animation_end_pos = 2000;
-    var beginning_color = new $.Color( 'rgb(239, 64, 54)' );    //Red
-    var beginning_color_r =  new $.Color( 'rgb(255, 255, 0)' ); //Yellow
-    var ending_color = new $.Color( 'rgb(0, 179, 227)' );       //Blue 
-    var ending_color_r = new $.Color( 'rgb(115, 0, 255)' ); 	//Purple
+    var beginning_color_r = new $.Color( 'rgb(0, 225, 0)' );    //Green
+    var beginning_color =  new $.Color( 'rgb(0, 150, 255)' ); //Blue
+    var ending_color = new $.Color( 'rgb(198, 40, 40)' ); 	//Red
+	var ending_color_r = new $.Color( 'rgb(0, 96, 100)' );   	//Yellow 
 	gradientAll($('#bg-gradient'), beginning_color, beginning_color_r);
     $(document).scroll(function() {
         scroll_pos = $(this).scrollTop(); 
@@ -74,10 +74,13 @@ $(document).ready(function(){
             var newBlue_r = beginning_color_r.blue() + ( ( ending_color_r.blue() - beginning_color_r.blue() ) * percentScrolled );
             var newColor_r = new $.Color( newRed_r, newGreen_r, newBlue_r );
             gradientAll($('#bg-gradient'), newColor, newColor_r);
+            // $('#bg-gradient').css({ background: "-webkit-gradient(linear, left top, right bottom, from("+ newColor +"), to("+ newColor_r +"))"});
         } else if ( scroll_pos > animation_end_pos ) {
             gradientAll($('#bg-gradient'), ending_color, ending_color_r);
+             // $('#bg-gradient').css({ background: "-webkit-gradient(linear, left top, right bottom, from("+ ending_color +"), to("+ ending_color_r +"))"});
         } else if ( scroll_pos < animation_begin_pos ) {
             gradientAll($('#bg-gradient'), beginning_color, beginning_color_r);
+             // $('#bg-gradient').css({ background: "-webkit-gradient(linear, left top, right bottom, from("+ beginning_color +"), to("+ beginning_color_r +"))"});
         } else { } 
     });
 });
@@ -99,22 +102,6 @@ $(document).ready(function(){
       $(this).stop().animate({ opacity: 0.5 }); 
     });
 });
-
-/////////////////////
-// Notable Works Fade
-/////////////////////
-
-$(document).ready(function(){
-	$('#notable-content li').hover(function(){
-	    $(this).find('img').stop().fadeTo('fast',0.1);
-	    $(this).find('span').stop().fadeTo('fast',1);
-		}, 
-	function(){
-	    $(this).find('img').stop().fadeTo('fast',1);
-	    $(this).find('span').stop().fadeTo('fast',0);
-	});
-});
-
 
 //////////////////
 // Welcome Message
