@@ -135,7 +135,7 @@ body{
 		color: rgba(86,59,114,0.82);
 	}
 
-#about-me, #light-box, #dark-box {
+#about-me, #light-box, #dark-box, #education {
 	text-align: center;
 	padding-top: 5px;
 	padding-bottom: 25px; 
@@ -354,9 +354,29 @@ body{
 	font-family: "Exo 2", sans-serif;
 }
 
+
+/* About Me */
+
+#about-logos{
+	text-align: center;
+	padding: 50px 0;
+}
+
+.about-logo{
+	max-width: 30%;
+	max-height:300px;
+	margin: 10px 5%;
+	display: inline-block;
+}
+
+@media  only screen and (max-width: 800px) {
+	.two-split {
+		display: block;
+		width: 90%;
+	}
+}
+
 /* CSS Page */
-
-
 
 
 
@@ -383,9 +403,6 @@ body{
 	display:block;
 	text-align:center
 }
-
-
-
 
 @media only screen and (max-width: 675px) {
 	#moon {

@@ -11,11 +11,7 @@ $(document).ready(function(){
 		
 		var mTop = topPos - topPos/3;
 		var banSpeed =  105 + topPos + topPos/4;
-		var waveSpeed = topPos + topPos/4
-		var daylightSpeed = (topPos * 0.1) * 3
-		var nightlightSpeed = (topPos * 0.1) * 5.5;
-		var dayPos = $('#day-change').offset().top
-		var nightPos = dayPos+250;
+		var waveSpeed = topPos + topPos/4;
 		
 		$('#banner-text').css({
 		 'margin-top' : mTop + 'px',
@@ -24,7 +20,13 @@ $(document).ready(function(){
 		$('#banner-wave.wave1').css('background-position', waveSpeed/10 + 'px 0');
 		$('#banner-wave.wave2').css('background-position',-25 + -waveSpeed/7 + 'px 0');
 		$('#banner-wave.wave3').css('background-position', -50  -waveSpeed/2.5 + 'px 0');
-
+		
+		var dayChangeBox = $('#day-change');
+		if ( !dayChangeBox.length ) return; // Skip if not on Day Change page
+		var daylightSpeed = (topPos * 0.1) * 3;
+		var nightlightSpeed = (topPos * 0.1) * 5.5;
+		var dayPos = dayChangeBox.offset().top;
+		var nightPos = dayPos+250;
 		var dayDeg   = 180 + 0.5*(-bottomOfScreen - dayPos);
 		var nightDeg = 180 + (-bottomOfScreen - nightPos);
 		var DAY_MAX = 440;
