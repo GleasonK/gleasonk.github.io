@@ -297,7 +297,25 @@ body{
 .notable-caption{
 	font-size: 18px;
 	position: absolute;
-	top:50px;
+	top:0;
+	left:0;
+	/*width: 96%;*/
+	/*height: 96%;*/
+	padding: 15% 3%;
+	display: none;
+	color: white;
+	text-align: center;
+}.
+
+.notable-caption>p {
+	font-size: 1em;
+	font-color:white;
+}
+
+.notable-buttons{
+	font-size: 18px;
+	position: absolute;
+	bottom:10px;
 	left: 5px;
 	display: none;
 	width: 95%;

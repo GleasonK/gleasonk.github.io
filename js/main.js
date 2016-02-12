@@ -107,11 +107,11 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$('#notable-content li').hover(function(){
 	    $(this).find('img').stop().fadeTo('fast',0.1);
-	    $(this).find('span').stop().fadeTo('fast',1);
+	    $(this).find('div').stop().fadeTo('fast',1);
 		}, 
 	function(){
 	    $(this).find('img').stop().fadeTo('fast',1);
-	    $(this).find('span').stop().fadeTo('fast',0);
+	    $(this).find('div').stop().fadeTo('fast',0);
 	});
 });
 
