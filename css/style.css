@@ -22,10 +22,10 @@ p, .link-style{
 }
 
 .page-title {
+	text-align: center;
 	color: rgba(54,38,22,0.82);
 	font-size: 35px;
 	font-family: 'Exo 2', sans-serif;
-	text-align: center;
 }
 
 hr.styled {
