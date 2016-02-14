@@ -116,19 +116,19 @@ body{
 		list-style: none;
 	}
 	
-	#top-info ul a {
-		text-decoration: none;
-	}
-	
-	#top-info ul a li {
+	#top-info ul li {
 		display: inline;
 		margin:0px 0px 0px 30px;
+	}
+	
+	#top-info ul li a{
+		text-decoration: none;
 		color: rgba(54,38,22,0.82);
 		font-size: 35px;
 		font-family: "Exo 2", sans-serif;
 	}
 	
-	#top-info ul a li:hover {
+	#top-info ul li a:hover {
 		color: rgba(86,59,114,0.82);
 	}
 
