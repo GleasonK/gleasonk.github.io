@@ -3,6 +3,18 @@ body {
   padding: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+#bg-vid video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .splash-screen {
     position: absolute;
     top: 0px; /* Header Height */
