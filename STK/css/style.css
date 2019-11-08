@@ -71,7 +71,7 @@ body {
   position: fixed;
   top:55%;
   left:40%;
-  font-family: cursive;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   color: white;
   font-size: 3em;
   font-weight: bold;
@@ -81,7 +81,7 @@ body {
   position: fixed;
   top:55%;
   left:35%;
-  font-family: cursive;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   color: white;
   font-size: 3em;
   font-weight: bold;
@@ -228,7 +228,7 @@ body {
 .arrow
 {
   font-size: 30px;
-  font-family: cursive;
+  font-family: "Comic Sans MS", cursive, sans-serif;
   position: relative;
   top: 80%;
   left: 50%;
