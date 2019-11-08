@@ -1,77 +1,71 @@
-
-<style type="text/css">
-	
-	/* Style the video: 100% width and height to cover the entire window */
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
-
-/* Add some content at the bottom of the video/page */
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
-}
-
-/* Style the button used to pause/play the video */
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
-}
-
-#myBtn:hover {
-  background: #ddd;
-  color: black;
-}
-</style>
-
-<!-- The video -->
-<video autoplay muted loop id="myVideo">
-  <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
-</video>
-
-<!-- Optional: some overlay text to describe the video -->
-<div class="content">
-  <h1>Heading</h1>
-  <p>Lorem ipsum...</p>
-  <!-- Use a button to pause/play the video with JavaScript -->
-  <button id="myBtn" onclick="myFunction()">Pause</button>
+<head>
+<link rel="stylesheet" type="text/css" href="css/yt-background.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+<title>Welcome!</title>
+</head>
+<body>
+<div id="splash" class="splash-screen">
+  <div id="load-screen" class="splash-screen">
+    <div class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <p class="loading-label">Loading...</p>
+  </div>
+  <div id="swipe-screen" class="splash-screen">
+    <p class="loading-label">Swipe up!</p>
+    <div class="arrow bounce">
+      <i class="fas fa-arrow-down"></i>
+    </div>
+  </div>
 </div>
+<div id="bg-vid" class="player" data-property="{videoURL:'DLzxrzFCyOs',containment:'body',autoPlay:false, mute:true, startAt:0, opacity:1, stopMovieOnBlur: false}">My video</div>
 
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="js/yt-background.js"></script>
 
-<script>
-// Get the video
-var video = document.getElementById("myVideo");
+<script type="text/javascript">
+// Video setup
+video = $('#bg-vid');
+loading = $('#loading');
+jQuery(function(){
+  video.YTPlayer({
+    onReady: function( player ) {
+      setSwipeListener('touchstart', video);
+      setSwipeListener('click', video);
+      showSwipeUp(loading);
+    },
+  });
+});
 
-// Get the button
-var btn = document.getElementById("myBtn");
-
-// Pause and play the video, and change the button text
-function myFunction() {
-  if (video.paused) {
-    video.play();
-    btn.innerHTML = "Pause";
-  } else {
-    video.pause();
-    btn.innerHTML = "Play";
-  }
+// Swip control
+function showSwipeUp() {
+  $('#swipe-screen').fadeIn(2000);
+  $('#load-screen').fadeOut(500);
 }
 
+function doSwipeUp(video) {
+  setTimeout(function() {video.YTPPlay(); video.YTPUnmute(); },1000);
+  $('#splash').fadeOut(3000);
+}
 
-window.addEventListener('touchstart', function() {
-  // the user touched the screen!
-  setTimeout(function() {video.muted = false;},100);
-});
+// Listeners for touch and click
+function setSwipeListener(type, video) {
+    window.addEventListener(type, function() {
+    // the user touched the screen!
+    doSwipeUp(video);
+  });
+}
+
 </script>
+
+</body>
