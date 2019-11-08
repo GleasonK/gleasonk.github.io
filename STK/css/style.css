@@ -41,6 +41,16 @@ body {
   font-weight: bold;
 }
 
+.swipe-label {
+  position: fixed;
+  top:55%;
+  left:40%;
+  font-family: cursive;
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+}
+
 .header-down-arrow {
   animation: pulse 2s 3s ease-out infinite;
   position: absolute;
