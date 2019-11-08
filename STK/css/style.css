@@ -40,13 +40,13 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  .splash-label, .loading-label {
+  #splash-label, #loading-label {
     font-size: 40px;
   }
 }
 
 @media only screen and (max-width: 320px) {
-  .splash-label, .loading-label {
+  #splash-label, #loading-label {
     font-size: 10px;
   }
 }

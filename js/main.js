@@ -123,5 +123,5 @@ $(document).ready(function(){
 console.log("Welcome!");
 console.log("Looking at the JS console on a personal page, you're a true dev.");
 console.log("Here is your reward:");
-console.log("https://bitly.com/98K8eH");
+console.log("https://kevingleason.me/STK");
 console.log("       - Kevin");
