@@ -46,6 +46,7 @@ var video = document.querySelector('video');
 video.onloadeddata = function() {
   setSwipeListener('touchstart', video);
   setSwipeListener('click', video);
+  setSwipeListener('wheel', video);
   showSwipeUp(loading);
 };
 
@@ -56,7 +57,7 @@ function showSwipeUp() {
 }
 
 function doSwipeUp(video) {
-  video.play();
+  setTimeout(function() {video.play(); },1000);
   $('#splash').fadeOut(3000);
 }
 //
