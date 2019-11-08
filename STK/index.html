@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="video-container">
-    <video controls> 
+    <video> 
       <source src="https://archive.org/download/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4" type="video/mp4"/>
     </video>
   </div>
@@ -41,12 +41,16 @@
 // Video setup
 var loading = $('#loading');
 var video = document.querySelector('video');
-video.onloadeddata = function() {
-  setSwipeListener('touchstart', video);
+video.addEventListener('loadedmetadata', function() {
+    video.currentTime = 1;
+}, false);
+video.addEventListener('loadeddata', function() {
+  setSwipeListener('touchend', video);
+  setSwipeListener('mouseup', video);
   setSwipeListener('click', video);
-  setSwipeListener('wheel', video);
+  setSwipeListener('wheel', video, true);
   showSwipeUp(loading);
-};
+});
 
 // Swip control
 function showSwipeUp() {
@@ -55,26 +59,30 @@ function showSwipeUp() {
 }
 
 function trySwipeUp(video) {
-  var promise = document.querySelector('video').play();
-  if (promise !== undefined) {
-    promise.then( _ => {
-      // Autoplay started!
-      video.pause();
-      $('#splash').fadeOut(3000);
-      setTimeout(function() {video.play(); }, 1000);
-    }).catch(error => {
-    // Autoplay was prevented.
-    // Show a "Play" button so that user can start playback.
-    });
-  }
+    if (!video.paused) {
+        return
+    }
+    var promise = video.play();
+    if (promise !== undefined) {
+        promise.then( _ => {
+            // Autoplay started!
+            video.pause();
+            $('#splash').fadeOut(3000);
+            setTimeout(function() {video.play(); }, 1000);
+        }).catch(error => {
+            // Autoplay was prevented.
+            // Show a "Play" button so that user can start playback.
+            console.log("Not an interaction.")
+        });
+    }
 }
-//
+
 // Listeners for touch and click
-function setSwipeListener(type, video) {
-  document.querySelector('#splash').addEventListener(type, function() {
+function setSwipeListener(type, video, capture = false) {
+  document.querySelector('#swipe-screen').addEventListener(type, function() {
     // the user touched the screen!
     trySwipeUp(video);
-  });
+  }, capture);
 }
 
 </script>
