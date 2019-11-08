@@ -2,7 +2,6 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/yt-background.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <title>Welcome!</title>
@@ -56,16 +55,26 @@ function showSwipeUp() {
   $('#load-screen').fadeOut(500);
 }
 
-function doSwipeUp(video) {
-  setTimeout(function() {video.play(); },1000);
-  $('#splash').fadeOut(3000);
+function trySwipeUp(video) {
+  var promise = document.querySelector('video').play();
+  if (promise !== undefined) {
+    promise.then( _ => {
+      // Autoplay started!
+      $('#splash').fadeOut(3000);
+      video.pause();
+      setTimeout(function() {video.play(); }, 2000);
+    }).catch(error => {
+    // Autoplay was prevented.
+    // Show a "Play" button so that user can start playback.
+    });
+  }
 }
 //
 // Listeners for touch and click
 function setSwipeListener(type, video) {
   document.querySelector('#splash').addEventListener(type, function() {
     // the user touched the screen!
-    doSwipeUp(video);
+    trySwipeUp(video);
   });
 }
 
