@@ -1,0 +1,38 @@
+<body>
+<style type="text/css">
+	#video{
+ position: relative;
+ background: transparent;
+}
+
+.ytplayer-container{
+ position: absolute;
+ top: 0;
+ z-index: -1;
+}
+</style>
+
+<div style="width:100%; overflow:hidden;">
+<div style="width:120%;height:120%; margin-left:-10%; margin-top:-5%; overflow:hidden;">
+<div style="" id="video"></div>
+</div></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script src="background-vid.js"></script>
+
+<script type="">
+$('#video').YTPlayer({
+	fitToBackground: true,
+	videoId: 'DLzxrzFCyOs',
+	mute: false,
+	start: 1,
+	callback: function() {
+		var player = $('#video').data('ytPlayer').player;
+		player.pauseVideo();
+		player.playVideo();
+	}
+});
+
+</script>
+
+</body>
