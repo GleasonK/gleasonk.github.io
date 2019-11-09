@@ -68,6 +68,7 @@ function trySwipeUp(video) {
             video.pause();
             $('#splash').fadeOut(3000);
             setTimeout(function() {video.play(); }, 1000);
+            ga('send', 'event', 'Videos', 'play', 'Rick Roll');
           }).catch(error => {
             // Autoplay was prevented.
             // Show a "Play" button so that user can start playback.
