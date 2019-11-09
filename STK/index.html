@@ -29,27 +29,26 @@
     </div>
   </div>
   <div class="video-container">
-    <video> 
+    <video autoplay> 
       <source src="https://archive.org/download/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4" type="video/mp4"/>
     </video>
   </div>
 
-<!-- JS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 
-<script type="text/javascript">
+  <script type="text/javascript">
 // Video setup
 var loading = $('#loading');
 var video = document.querySelector('video');
-video.addEventListener('loadedmetadata', function() {
-    video.currentTime = 1;
-}, false);
 video.addEventListener('loadeddata', function() {
   setSwipeListener('touchend', video);
   setSwipeListener('mouseup', video);
   setSwipeListener('click', video);
   setSwipeListener('wheel', video, true);
   showSwipeUp(loading);
+  video.currentTime = 1;
+  video.pause();
 });
 
 // Swip control
@@ -59,23 +58,23 @@ function showSwipeUp() {
 }
 
 function trySwipeUp(video) {
-    if (!video.paused) {
-        return
-    }
-    var promise = video.play();
-    if (promise !== undefined) {
-        promise.then( _ => {
+  if (!video.paused) {
+    return
+  }
+  var promise = video.play();
+  if (promise !== undefined) {
+    promise.then( _ => {
             // Autoplay started!
             video.pause();
             $('#splash').fadeOut(3000);
             setTimeout(function() {video.play(); }, 1000);
-        }).catch(error => {
+          }).catch(error => {
             // Autoplay was prevented.
             // Show a "Play" button so that user can start playback.
             console.log("Not an interaction.")
-        });
-    }
-}
+          });
+        }
+      }
 
 // Listeners for touch and click
 function setSwipeListener(type, video, capture = false) {
@@ -84,6 +83,7 @@ function setSwipeListener(type, video, capture = false) {
     trySwipeUp(video);
   }, capture);
 }
+
 
 </script>
 
