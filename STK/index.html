@@ -29,18 +29,19 @@
     </div>
   </div>
   <div class="video-container">
-    <video preload="metadata" playsinline> 
+    <video preload="metadata" playsinline autoplay> 
       <source src="https://archive.org/download/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4" type="video/mp4"/>
     </video>
   </div>
 
-<!-- JS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 
-<script type="text/javascript">
+  <script type="text/javascript">
 // Video setup
 var loading = $('#loading');
 var video = document.querySelector('video');
+
 video.addEventListener('loadedmetadata', function() {
     video.currentTime = 1;
     tryLoad();
@@ -49,12 +50,13 @@ video.addEventListener('loadedmetadata', function() {
     setSwipeListener('click', video);
     setSwipeListener('wheel', video, true);
     showSwipeUp(loading);
-
+    video.pause();
 }, false);
+
 video.addEventListener('loadeddata', function() {
+    console.log('Loaded.');
 });
 
-var loading = false;
 function tryLoad(){
     // Try load only once.
     if (typeof tryLoad.loading == 'undefined') {
@@ -65,28 +67,35 @@ function tryLoad(){
 
 // Swip control
 function showSwipeUp() {
-    $('#swipe-screen').fadeIn(2000);
-    $('#load-screen').fadeOut(500);
+    setTimeout(function(){
+        $('#swipe-screen').fadeIn(2000);
+        $('#load-screen').fadeOut(500);
+    }, 1000);
 }
 
 function trySwipeUp(video) {
-    if (!video.paused) {
-        return
-    }
-    var promise = video.play();
-    if (promise !== undefined) {
-        promise.then( _ => {
+  if (!video.paused) {
+    return
+  }
+  var promise = video.play();
+  if (promise !== undefined) {
+    promise.then( _ => {
             // Autoplay started!
             video.pause();
             $('#splash').fadeOut(3000);
             setTimeout(function() {video.play(); }, 1000);
-        }).catch(error => {
+            gtag('event', 'rick-roll', {
+              'event_category': 'Video',
+              'event_label': 'Rick Rolled',
+              'value': 1,
+            });
+          }).catch(error => {
             // Autoplay was prevented.
             // Show a "Play" button so that user can start playback.
             console.log("Not an interaction.")
-        });
-    }
-}
+          });
+        }
+      }
 
 // Listeners for touch and click
 function setSwipeListener(type, video, capture = false) {
@@ -95,6 +104,7 @@ function setSwipeListener(type, video, capture = false) {
         trySwipeUp(video);
     }, capture);
 }
+
 
 </script>
 
