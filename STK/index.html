@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="video-container">
-    <video> 
+    <video preload="metadata" playsinline> 
       <source src="https://archive.org/download/Rick_Astley_Never_Gonna_Give_You_Up/Rick_Astley_Never_Gonna_Give_You_Up.mp4" type="video/mp4"/>
     </video>
   </div>
@@ -43,19 +43,30 @@ var loading = $('#loading');
 var video = document.querySelector('video');
 video.addEventListener('loadedmetadata', function() {
     video.currentTime = 1;
+    tryLoad();
+    setSwipeListener('touchend', video);
+    setSwipeListener('mouseup', video);
+    setSwipeListener('click', video);
+    setSwipeListener('wheel', video, true);
+    showSwipeUp(loading);
+
 }, false);
 video.addEventListener('loadeddata', function() {
-  setSwipeListener('touchend', video);
-  setSwipeListener('mouseup', video);
-  setSwipeListener('click', video);
-  setSwipeListener('wheel', video, true);
-  showSwipeUp(loading);
 });
+
+var loading = false;
+function tryLoad(){
+    // Try load only once.
+    if (typeof tryLoad.loading == 'undefined') {
+        video.load();
+        tryLoad.loading = true;
+    }
+}
 
 // Swip control
 function showSwipeUp() {
-  $('#swipe-screen').fadeIn(2000);
-  $('#load-screen').fadeOut(500);
+    $('#swipe-screen').fadeIn(2000);
+    $('#load-screen').fadeOut(500);
 }
 
 function trySwipeUp(video) {
@@ -79,10 +90,10 @@ function trySwipeUp(video) {
 
 // Listeners for touch and click
 function setSwipeListener(type, video, capture = false) {
-  document.querySelector('#swipe-screen').addEventListener(type, function() {
-    // the user touched the screen!
-    trySwipeUp(video);
-  }, capture);
+    document.querySelector('#swipe-screen').addEventListener(type, function() {
+        // the user touched the screen!
+        trySwipeUp(video);
+    }, capture);
 }
 
 </script>
@@ -90,11 +101,11 @@ function setSwipeListener(type, video, capture = false) {
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-46933211-3"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
-  gtag('config', 'UA-46933211-3');
+gtag('config', 'UA-46933211-3');
 </script>
 
 
