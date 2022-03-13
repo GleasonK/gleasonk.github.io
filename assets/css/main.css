@@ -269,6 +269,7 @@ nav ul li {
 .kg-experience-ul li {
 	padding-left: 5px;
 }
+
 .kg-experience-categories {
 	padding-left: 0px;
 	margin-left: 15px;
@@ -285,6 +286,7 @@ nav ul li {
 .kg-experience-categories ul li {
 	padding: 5px 10px;
 	margin: 0;
+	cursor: pointer;
 }
 .kg-experience-categories ul li:hover {
 	background: var(--kg-grey-hover);
