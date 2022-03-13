@@ -496,6 +496,12 @@ p {
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {  }
 
+@media (orientation:landscape) {
+    .hide-on-landscape {
+        display: none;
+    }
+}
+
 /* Fonts */
 @font-face {
   font-family: 'Calibre';
