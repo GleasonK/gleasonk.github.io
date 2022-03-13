@@ -1,0 +1,610 @@
+body, nav {
+    font-family: var(--kg-calibre);
+    background: var(--kg-navy);
+}
+
+a, a:hover {
+	text-decoration: none;
+	color: var(--kg-orange);
+}
+
+button, .btn {
+	font-family: var(--kg-mono);
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 18px;
+	padding: 10px 22px;
+	box-sizing: border-box;
+	border-radius: 3px;
+	border: 1.5px solid var(--kg-orange)!important;
+	color: var(--kg-orange)!important;
+}
+
+button:hover {
+	background: var(--kg-orange-hover)!important;
+}
+
+nav ul li {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#about {
+
+}
+
+#contact {
+	height: 50vh;
+}
+
+#kg-binary {
+	color: var(--kg-grey1);
+	width:min-content; 
+	align-items:flex-end;
+	position: fixed;
+	bottom: 0;
+	right:  0;
+}
+
+#kg-gh-icons {
+	color: var(--kg-orange);
+	font-family: var(--kg-calibre);
+	line-height: 20px;
+	justify-self: center;
+	align-self: center;
+	margin: 20px;
+}
+
+#kg-gh-icons svg {
+	height: 18px;
+	margin-left: 15px;
+}
+#kg-gh-icons svg path {
+	stroke: var(--kg-orange);
+}
+
+#kg-headshot {
+	text-align: center;
+}
+#kg-headshot img {
+	max-width: 175px;
+	margin-bottom: 20px;
+}
+
+#kg-resume {
+	color: var(--kg-grey3)!important;
+	border-color: var(--kg-grey3)!important;
+}
+#kg-resume:hover {
+	background: var(--kg-grey-hover)!important;
+}
+
+#kg-sidebar {
+	margin-left: 5%; /* TODO: How to get this in the right spot? */
+	width: fit-content;
+}
+#kg-sidebar ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	color: white;  /*TODO: Remove */
+}
+#kg-sidebar ul li {
+	margin: 10px 0px;
+	font-family: var(--kg-mono);
+}
+#kg-sidebar ul li:hover .kg-sidebar-modal {
+	display: inline-block;
+}
+#kg-sidebar svg:not(.kg-fill) path {
+	stroke: var(--kg-grey4);
+}
+#kg-sidebar li svg.kg-fill path {
+	fill: var(--kg-grey4);
+}
+#kg-sidebar li:hover svg:not(.kg-fill) path {
+	stroke: var(--kg-orange);
+}
+#kg-sidebar li:hover svg.kg-fill path {
+	fill: var(--kg-orange);
+}
+
+#kg-sidebar-line {
+	border-right: 1.5px solid var(--kg-grey4);
+	height: 120px;
+	width: fit-content;
+	margin: 10px;
+}
+
+#surprise {
+	color: inherit;
+	text-decoration: none;
+}
+
+.binary-chars{
+	display: none;
+	color: var(--kg-orange);
+	text-shadow: 1px 1px var(--kg-orange-hover);
+}
+.binary-chars b {
+	text-shadow: 2px 2px var(--kg-orange-hover);
+}
+.binary-wrapper:hover .binary-bits {
+	display: none;
+}
+.binary-wrapper:hover .binary-chars {
+	display: block;
+}
+
+.asm {
+	font-family: var(--kg-mono);
+	font-style: normal;
+	font-weight: normal;
+	width: fit-content;
+    text-align: right;
+	font-size: 16px;
+	line-height: 21px;
+	color: var(--kg-grey2);
+}
+
+.goto {
+	color: var(--kg-grey2);
+}
+
+.navbar {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: 100px;
+	z-index: 1;
+}
+
+.navbar-brand {
+	background: var(--kg-grey-hover);
+	width: 55px;
+	height: 55px;
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.nav-link {
+	color: var(--kg-grey4)!important;
+}
+
+.nav-link:hover .goto {
+	color: var(--kg-orange)!important;
+}
+.nav-link:hover {
+	color: var(--kg-grey5)!important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 119, 43)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+  border-color: var(--kg-orange);
+} 
+
+.line-numbers {
+	margin-top: -4px;
+	color: var(--kg-grey1);
+	font-size: 16px;
+}
+
+.line-vert-light {
+	border-right: 1px solid var(--kg-grey1);
+	margin-right: 3px;
+}
+
+.line-horz {
+	width: 100%;
+	border-top: 1px solid var(--kg-orange);
+	margin-top: 25px;
+}
+
+.small {
+	font-family: var(--kg-mono);
+	color: var(--kg-grey2);
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.ul-skills {
+	font-family: var(--kg-mono);
+	color: var(--kg-grey2);
+	line-height: 30px;
+	list-style-image: url('/assets/icons/carrots.svg');
+	padding-left: 1rem;
+}
+
+.ul-skills > li {
+	padding-left: 5px;
+	line-height: 30px;
+}
+
+.vh-100 {
+	min-height: 100vh!important;
+	height: auto!important;
+}
+
+.kg-mono {
+	font-family: var(--kg-mono);
+}
+
+.kg-sidebar-modal {
+	display: none;
+}
+
+.kg-experience-company {
+	font-size: 16px;
+	font-family: var(--kg-mono);
+	line-height: 21px;
+	color: var(--kg-orange);
+	margin-bottom: 5px;
+}
+.kg-experience-date {
+	font-size: 16px;
+	font-family: var(--kg-mono);
+	line-height: 21px;
+	color: var(--kg-grey2);
+}
+
+.kg-experience-ul {
+	font-family: var(--kg-calibre);
+	color: var(--kg-grey3);
+	font-size: 16px;
+	list-style-image: url('/assets/icons/carrots.svg');
+	padding-left: 1rem;
+}
+.kg-experience-ul li {
+	padding-left: 5px;
+}
+.kg-experience-categories {
+	padding-left: 0px;
+	margin-left: 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+	border-left: 1px solid var(--kg-grey1);
+}
+.kg-experience-categories ul {
+	list-style-image: url('/assets/icons/circle.svg');
+	list-style-position: inside;
+	margin: 0;
+	padding: 0;
+}
+.kg-experience-categories ul li {
+	padding: 5px 10px;
+	margin: 0;
+}
+.kg-experience-categories ul li:hover {
+	background: var(--kg-grey-hover);
+}
+.kg-experience-categories ul li.kg-experience-active {
+	list-style-image: url('/assets/icons/circle-filled.svg');
+	background: var(--kg-grey-hover);
+}
+.kg-experience-categories ul li a {
+	color: var(--kg-grey3);
+}
+
+.kg-footer {
+	font-family: var(--kg-mono);
+	color: var(--kg-grey3);
+	font-size: 12px;
+	margin-top: 10%;
+}
+
+/* TEXT - Styles */
+h1, h2 {
+	font-weight: 600;
+	font-family: var(--kg-calibre);
+	color: var(--kg-grey4);
+}
+
+h3 {
+	font-family: var(--kg-calibre);
+	color: var(--kg-grey3);
+	margin: 0;
+	font-weight: 400;
+}
+
+h4 {
+	margin: 1px 0px;
+	font-family: var(--kg-calibre);
+	color: var(--kg-grey4);
+	font-style: normal;
+	font-weight: 600;
+}
+
+
+h5 { /* SH 1? - "Compiler Engineer" */
+	color: var(--kg-grey3);
+	font-family: var(--kg-mono);
+	font-style: normal;
+	font-weight: normal;
+	margin-top: -5px; /*FIXME*/
+	margin-bottom: 20px;
+}
+
+p {
+	color: var(--kg-grey3);
+	font-family: var(--kg-calibre);
+	font-style: normal;
+	font-weight: normal;
+}
+
+.kg-orange {
+	color: var(--kg-orange);
+}
+.kg-grey-4 {
+	color: var(--kg-grey4);
+}
+
+.kg-small {
+	font-family: 'Roboto Mono';
+	font-style: normal;
+	font-weight: 400;
+}
+
+/* Text - Sizes */
+
+/* XS - All small devices.  */
+h1 {
+	font-size: 40px;
+	line-height: 60px;
+}
+
+h2 {
+	font-size: 30px;
+	line-height: 45px;
+}
+
+h3 {
+	font-size: 20px;
+	line-height: 23px;
+}
+
+h4 {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+h5 {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+p {
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.kg-small{
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.navbar-nav {
+	background: var(--kg-navy);
+	border-bottom: 1px solid var(--kg-grey-hover);
+	padding-bottom: 15px;
+}
+
+#kg-binary {
+	font-size: 22px;
+	line-height: 25px;
+}
+#kg-binary a {
+	color: var(--kg-grey3);
+}
+
+#about, #experience {
+	padding-top: 150px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	h1 {
+		font-size: 80px;
+		line-height: 96px;
+		margin: 0;
+	}
+
+	h2 {
+		font-size: 60px;
+		line-height: 90px;
+	}
+
+	h3 {
+		font-size: 30px;
+		line-height: 45px;
+	}
+
+	h4 {
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	p {
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	.kg-small {
+		font-size: 16px;
+		line-height: 21px;
+	}
+
+	.asm {
+		width: auto;
+	}
+
+	#kg-binary {
+		font-size: 30px;
+		line-height: 35px;
+	}
+
+	.kg-experience-categories ul li {
+		padding: 20px 10px;
+		margin: 0;
+	}
+
+	#about, #experience {
+		padding-top: 100px;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.navbar-nav {
+		background: none;
+		border-bottom: none;
+		padding-bottom: 0px;
+	}
+
+	#about, #experience {
+		padding-top: 0px;
+	}
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {  }
+
+/* Fonts */
+@font-face {
+  font-family: 'Calibre';
+  font-style: regular;
+  font-weight: 400;
+  src: url('/assets/fonts/CalibreRegular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Calibre';
+  font-style: regular;
+  font-weight: 600;
+  src: url('/assets/fonts/CalibreSemibold.otf') format('opentype');
+}
+
+/* Variables  */
+:root {
+  --kg-navy: #1B203D;
+  --kg-orange: #FF772A;
+  --kg-orange-hover: #FF772A33;
+  --kg-orange-hover-test: #FFE4D410;
+  --kg-grey1: #32395C;
+  --kg-grey2: #7077A1;
+  --kg-grey3: #9AA0C3;
+  --kg-grey4: #C0C5E2;
+  --kg-grey5: #E3E7FB;
+  --kg-grey-hover: #E3E7FB33;
+  --kg-mono: 'Roboto Mono', monospace;
+  --kg-calibre: 'Calibre', monospace;  /*FIXME: Backups*/
+}
+
+/* Animations */
+.animatable {
+  
+  /* initially hide animatable objects */
+  visibility: hidden;
+  
+  /* initially pause animatable objects their animations */
+  -webkit-animation-play-state: paused;   
+  -moz-animation-play-state: paused;     
+  -ms-animation-play-state: paused;
+  -o-animation-play-state: paused;   
+  animation-play-state: paused; 
+}
+
+/* show objects being animated */
+.animated {
+  visibility: visible;
+  
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s;
+
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -ms-animation-play-state: running;
+  -o-animation-play-state: running;
+  animation-play-state: running;
+}
+
+/* CSS Animations (extracted from http://glifo.uiparade.com/) */
+/* https://codepen.io/bramus/pen/AzmevE */
+@-webkit-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(100px);
+	}	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-moz-transform: translateY(100px);
+	}
+
+	100% {
+		opacity: 1;
+		-moz-transform: translateY(0);
+	}
+}
+
+@-o-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-o-transform: translateY(100px);
+	}
+
+	100% {
+		opacity: 1;
+		-o-transform: translateY(0);
+	}
+}
+
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animated.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	-moz-animation-name: fadeInUp;
+	-o-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+}
