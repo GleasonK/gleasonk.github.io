@@ -498,7 +498,7 @@ p {
 
 @media (orientation:landscape) {
     .hide-on-landscape {
-        display: none;
+        display: none!important;
     }
 }
 
