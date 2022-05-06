@@ -41,6 +41,14 @@ nav ul li {
 	height: 50vh;
 }
 
+#contact a:hover {
+	text-decoration: underline;
+}
+
+#footer {
+	height: 50px;
+}
+
 #kg-binary {
 	color: var(--kg-grey1);
 	width:min-content; 
@@ -56,7 +64,7 @@ nav ul li {
 	line-height: 20px;
 	justify-self: center;
 	align-self: center;
-	margin: 20px;
+	margin-top: 20px;
 }
 
 #kg-gh-icons svg {
@@ -91,10 +99,9 @@ nav ul li {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	color: white;  /*TODO: Remove */
 }
 #kg-sidebar ul li {
-	margin: 10px 0px;
+	margin: 15px 0px;
 	font-family: var(--kg-mono);
 }
 #kg-sidebar ul li:hover .kg-sidebar-modal {
@@ -244,7 +251,9 @@ nav ul li {
 .kg-sidebar-modal {
 	display: none;
 }
-
+.kg-experience-company-date {
+	padding-bottom: 5px;
+}
 .kg-experience-company {
 	font-size: 16px;
 	font-family: var(--kg-mono);
@@ -299,11 +308,60 @@ nav ul li {
 	color: var(--kg-grey3);
 }
 
+.kg-projects-project {
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-left: 1px solid var(--kg-grey1);
+}
+.kg-projects-project h3 {
+	color: var(--kg-grey4);
+	line-height: 35px;
+}
+.kg-projects-description {
+	font-size: 18px;
+	margin:0; 
+	line-height: 25px;
+}
+.kg-projects-view {
+	font-size: 18px;
+	color: var(--kg-orange);
+	padding: 5px 0px;
+	border-radius: 5px;
+	width: fit-content;
+}
+.kg-projects-view:hover {
+	background: var(--kg-orange-hover);
+}
+.kg-projects-view span {
+	height: 100%;
+	padding: 3px 0px;
+	border-bottom: 1px solid var(--kg-orange);
+}
+.kg-projects-tags{
+	margin-top: 30px;
+	font-size: 12px;
+	font-family: var(--kg-mono);
+}
+.kg-projects-tags span {
+	padding: 5px 10px;
+	margin-right: 5px;
+	border-radius: 5px;
+	color: var(--kg-grey5);
+	border: 1px solid var(--kg-grey5);
+}
+
 .kg-footer {
 	font-family: var(--kg-mono);
 	color: var(--kg-grey3);
-	font-size: 12px;
-	margin-top: 10%;
+	font-size: 14px;
+}
+.kg-footer a {
+	color: var(--kg-grey3);
+	text-decoration: underline;
+}
+.kg-footer a:hover {
+	color: var(--kg-orange);
 }
 
 /* TEXT - Styles */
@@ -487,6 +545,10 @@ p {
 
 	#about, #experience {
 		padding-top: 0px;
+	}
+
+	#kg-gh-icons {
+		margin-top: 60px;
 	}
 }
 
