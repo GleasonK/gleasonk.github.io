@@ -530,6 +530,12 @@ p {
 	}
 }
 
+@media screen and (min-width:320px) and (max-width:767px) and (orientation:landscape) {
+    .hide-on-landscape {
+        display: none!important;
+    }
+}
+
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 	.navbar-nav {
@@ -557,12 +563,6 @@ p {
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {  }
-
-@media (orientation:landscape) {
-    .hide-on-landscape {
-        display: none!important;
-    }
-}
 
 /* Fonts */
 @font-face {
