@@ -351,6 +351,9 @@ nav ul li {
 	border: 1px solid var(--kg-grey5);
 }
 
+.kg-inline-link {
+	color: var(--kg-grey4);
+}
 .kg-footer {
 	font-family: var(--kg-mono);
 	color: var(--kg-grey3);
@@ -360,7 +363,7 @@ nav ul li {
 	color: var(--kg-grey3);
 	text-decoration: underline;
 }
-.kg-footer a:hover {
+.kg-footer a:hover, .kg-inline-link:hover {
 	color: var(--kg-orange);
 }
 
