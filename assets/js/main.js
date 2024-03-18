@@ -2,8 +2,8 @@
 (function() {
     function hideKgBinaryOnScroll() {
         if ($(this).scrollTop() > 175) {
-            $('#kg-binary').fadeOut("slow", function () { 
-                $('#kg-binary').css({'visibility': 'hidden'}); 
+            $('#kg-binary').fadeOut("slow", function () {
+                $('#kg-binary').css({'visibility': 'hidden'});
             });
         } else {
             $('#kg-binary').css({'visibility': 'visible'});
@@ -12,15 +12,13 @@
     }
     $(window).scroll(hideKgBinaryOnScroll);
     $(document).ready(hideKgBinaryOnScroll);
-    
 })();
 
 // Update social stats
 (function(){
-    // github
+    // github forks and stars
     $.get("https://api.github.com/users/gleasonk/repos?per_page=200", function(data){
         window.data = data;
-        console.log(data);
         let stars=0;
         let forks=0;
         data.map(repo => {
@@ -30,6 +28,12 @@
         $('#kg-gh-stars').html(stars);
         $('#kg-gh-forks').html(forks);
     });
+
+    // github followers
+    //$.get("https://api.github.com/users/gleasonk", function(data){
+    //    window.follower_data = data;
+    //    $('#kg-gh-followers').html(data.followers);
+    //});
 })();
 
 // Experience toggler
@@ -57,19 +61,17 @@ function scrollToId(id) {
 // Detailed explanation can be found at http://www.bram.us/2013/11/20/scroll-animations/
 // Taken from: https://codepen.io/bramus/pen/AzmevE
 jQuery(function($) {
-  
   // Function which adds the 'animated' class to any '.animatable' in view
   var doAnimations = function() {
-    
     // Calc current offset and get all animatables
     var offset = $(window).scrollTop() + $(window).height(),
         $animatables = $('.animatable');
-    
+
     // Unbind scroll handler if we have no animatables
     if ($animatables.length == 0) {
       $(window).off('scroll', doAnimations);
     }
-    
+
     // Check all animatables and animate them if necessary
     $animatables.each(function(i) {
        var $animatable = $(this);
@@ -79,7 +81,7 @@ jQuery(function($) {
     });
 
   };
-  
+
   // Hook doAnimations on scroll, and trigger a scroll
   $(window).on('scroll', doAnimations);
   $(window).trigger('scroll');
